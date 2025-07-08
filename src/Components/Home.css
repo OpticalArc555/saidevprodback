@@ -1,0 +1,149 @@
+.home-container {
+  width: 100%;
+  font-family: "Segoe UI", sans-serif;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* ✅ Blurred Background Image */
+.home-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/Background images/image4.jpg'); /* Adjust path as needed */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(3px); /* Adjust blur */
+  z-index: -1;
+}
+
+/* Slideshow */
+.slideshow {
+  position: relative;
+  height: 800px;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+/* Interest Section */
+.interest-section {
+  padding: 40px 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  backdrop-filter: blur(1px);
+  border-radius: 8px;
+  margin: 20px;
+}
+
+.interest-section h2 {
+  color: #2e7d32;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.interest-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.interest-box {
+  width: 180px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  transition: transform 0.3s;
+  text-align: center;
+}
+
+.interest-box:hover {
+  transform: translateY(-5px);
+}
+
+.interest-box img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 8px;
+}
+
+.interest-box h4 {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* ✅ Banner Style */
+.interest-banner {
+  margin: 40px auto;
+  text-align: center;
+}
+
+.interest-banner img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .slideshow {
+    height: 200px;
+  }
+
+  .interest-box {
+    width: 140px;
+  }
+
+  .interest-box img {
+    height: 80px;
+  }
+
+  .interest-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .interest-banner img {
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .interest-box {
+    width: 100px;
+  }
+
+  .interest-box img {
+    height: 60px;
+  }
+
+  .interest-box h4 {
+    font-size: 0.85rem;
+  }
+
+  .slideshow {
+    height: 150px;
+  }
+}

@@ -1,0 +1,86 @@
+/* Projects.css */
+
+.completed-projects {
+  position: relative;
+  width: 100%;
+ 
+}
+
+.heading {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #f6f8f8;
+  text-shadow: black;
+  font-weight: bold;
+}
+
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.project-box {
+  width: 30%;
+  min-width: 300px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.project-box:hover {
+  transform: translateY(-5px);
+}
+
+.project-image {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.project-info {
+  padding: 15px 20px;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.project-title {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #00507A;
+  text-align: center;
+}
+
+.project-info p {
+  font-size: 0.95rem;
+  margin: 6px 0;
+  color: #333;
+  line-height: 1.4;
+}
+
+.project-description {
+  margin-top: 10px;
+  color: #555;
+  font-style: italic;
+}
+
+/* ✅ Background Blur Layer (like About) */
+.completed-projects::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('../assets/Background images/image4.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(3px);
+  z-index: -1;
+}
